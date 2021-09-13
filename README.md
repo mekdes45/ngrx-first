@@ -69,3 +69,15 @@ ng add action
 ng g action store/user --group --api --flat false --skip-tests --prefix load --creators true
 
 ```
+
+## Step 5
+
+ng add reducer
+
+## Command
+
+```
+ng g r store/user --creators true --flat false --group --module app.module.ts --skip-tests --api --reducers index.ts
+
+
+```
