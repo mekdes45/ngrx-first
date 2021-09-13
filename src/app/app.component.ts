@@ -1,6 +1,7 @@
+import { loadUsersSuccess, selectUser, selectPost } from './store/actions/user/user.actions';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { loadUsers } from './store/actions/user/user.actions';
+
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,15 @@ export class AppComponent {
   constructor(
     private store:Store
   ) {
-    this.store.dispatch(loadUsers())
+ 
+    this.store.dispatch(loadUsersSuccess({ data: [{ id: 9, name: 'Moe' }] }))
+    this.store.dispatch(selectUser({
+      data: {
+        id
+          : 9, name: "name"
+      }
+    }))
+    this.store.dispatch(selectPost({data:{postId:9,title:'mekdes'}}))
   }
 }
+
